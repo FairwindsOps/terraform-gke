@@ -1,5 +1,6 @@
 # Terraform GKE
-This repository contains the standards for GKE implementations. This repository will have multiple terraform modules due to the nature of some of the incompatibilities in parameters.
+This repository contains the standards for GKE cluster implementations, and is a work in progress. The GKE cluster module should be adaptable. Ideally, it should allow for public "standard" GKE clusters, public/VPC-native clusters, and private/VPC-native clusters. This module will only contain GKE-related terraform resources. Underlying network resources will be created in separate modules in separate repositories, which will have to be used in conjunction with this module/repository to create a complete infrastructure. [add links to these network module repos as they are created]
+
 
 ## Usage
 [needs info]
