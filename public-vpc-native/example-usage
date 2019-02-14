@@ -1,0 +1,39 @@
+# These local variables can be used as inputs to both a network and this GKE VPC Native cluster module.
+locals {
+  region             = "us-central1"
+  network_name       = "customername-test"
+  kubernetes_version = "1.11.6-gke.6"
+}
+
+module "customername_vpc" {
+  source = "git@github.com:reactiveops/terraform-gcp-vpc-native.git//default"
+
+  network_name        = "${local.network_name}"
+  subnetwork_name     = "${local.network_name}-subnet"
+  region              = "${local.region}"
+  enable_flow_logs    = false
+  subnetwork_range    = "10.8.0.0/20"
+  subnetwork_pods     = "10.8.64.0/18"
+  subnetwork_services = "10.8.32.0/20"
+}
+
+module "customername_cluster" {
+  source = "git@github.com:/reactiveops/terraform-gke//public-vpc-native?ref=if/public-vpc-native"
+
+  name                             = "customername-cluster1"
+  region                           = "${local.region}"
+  project                          = "customername-dev"
+  kubernetes_version               = "${local.kubernetes_version}"
+  network_name                     = "${local.network_name}"
+  nodes_subnetwork_name            = "${module.customername_vpc.subnetwork}"
+  pods_secondary_ip_range_name     = "${module.customername_vpc.gke_pods_1}"
+  services_secondary_ip_range_name = "${module.customername_vpc.gke_services_1}"
+
+  master_authorized_network_cidrs = [
+    {
+      # THis is the module default, but demonstrates specifying this input.
+      cidr_block   = "0.0.0.0/0"
+      display_name = "from the Internet"
+    },
+  ]
+}
