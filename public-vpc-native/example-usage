@@ -23,7 +23,7 @@ module "customername_cluster" {
 
   master_authorized_network_cidrs = [
     {
-      # THis is the module default, but demonstrates specifying this input.
+      # This is the module default, but demonstrates specifying this input.
       cidr_block   = "0.0.0.0/0"
       display_name = "from the Internet"
     },

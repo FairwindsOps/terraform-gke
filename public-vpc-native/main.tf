@@ -10,7 +10,7 @@ resource "google_container_cluster" "cluster" {
     services_secondary_range_name = "${var.services_secondary_ip_range_name}"
   }
 
-  # THis is believed to apply to the default node pool, which gets created then deleted.
+  # This is believed to apply to the default node pool, which gets created then deleted.
   initial_node_count       = 1
   remove_default_node_pool = true
 

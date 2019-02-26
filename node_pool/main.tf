@@ -1,8 +1,8 @@
 # IMPORTANT
-## Please BE CAREFUL when chnging `keepers`. If you add a keeper
-## then this will cause a CREATATION CASCADE! Since a new keeper
-## triggers a new resource random to generate then it will change
-## the name of the node pool, which will recrete the resource!
+## Please BE CAREFUL when changing `keepers`. If you add a keeper
+## then this will cause a CREATION CASCADE! Since a new keeper
+## triggers a new `random_id` resource to generate then it will change
+## the name of the node pool, which will recreate that resource!
 ## This is the preferred method for random naming now that
 ## name-prefix is being deprecated!
 ## IF YOU ADD A KEEPER YOU WILL NEED TO WARN DOWNSTREAM USERS THAT
