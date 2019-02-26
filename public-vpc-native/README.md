@@ -4,6 +4,8 @@ This module manages a public Google Kubernetes Engine (GKE) VPC Native cluster. 
 
 ## Using The Terraform Module
 
+This module requires version 2.0.0 or above of the Google Terraform provider.
+
 See the file [example-usage](./example-usage) for an example of how to use this module. Below are the available module inputs:
 
 ### Required Inputs
@@ -100,14 +102,6 @@ Description: The GKE Cluster Endpoints IP
 #### kubernetes\_version
 
 Description: The Kubernetes version used when creating or upgrading this cluster. This does not reflect the current version of master or worker nodes.
-
-#### latest\_available\_gke\_master\_version
-
-Description: The latest available GKE master version in the same region as the cluster. This is designed to be a quick way to get the latest master version when planning cluster upgrades.
-
-#### latest\_available\_gke\_node\_version
-
-Description: The latest available GKE node version in the same region as the cluster. This is designed to be a quick way to get the latest master version when planning cluster upgrades.
 
 #### master\_version
 
