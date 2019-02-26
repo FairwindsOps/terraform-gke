@@ -1,5 +1,5 @@
 # Terraform GKE
-This repository contains the standards for GKE cluster implementations, and is a work in progress. The GKE cluster module should be adaptable. Ideally, it should allow for public "standard" GKE clusters, public/VPC-native clusters, and private/VPC-native clusters. This module will only contain GKE-related terraform resources. Underlying network resources will be created in separate modules in separate repositories, which will have to be used in conjunction with this module/repository to create a complete infrastructure. [add links to these network module repos as they are created]
+This repository contains the standards for GKE cluster implementations, and is a work in progress. The GKE cluster module should be adaptable. Ideally, it should allow for public/VPC-native and private/VPC-native clusters. This module will only contain GKE-related terraform resources. Underlying network resources will be created in separate modules in separate repositories, which will have to be used in conjunction with this module/repository to create a complete infrastructure. See the [terraform-gcp-vpc-native][] repository.
 
 
 ## Usage
@@ -32,3 +32,6 @@ We do not anticipate retrofitting patches to older MINOR versions. If we are cur
   * Typos could be fixed with patch if it affects behavior of the terraform module
   * Fixes to older supported features of the module that broke with MINOR functionality changes
   * README and USAGE documentation changes may trigger a PATCH change and should be documented in CHANGELOG
+
+
+[terraform-gcp-vpc-native]: https://github.com/reactiveops/terraform-gcp-vpc-native
