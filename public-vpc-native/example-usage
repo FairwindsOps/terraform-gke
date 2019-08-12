@@ -7,10 +7,10 @@ locals {
 
 
 # The `module.customername_vpc` below refers to an instance of a VPC module.
-# Ref: https://github.com/reactiveops/terraform-gcp-vpc-native
+# Ref: https://github.com/FairwindsOps/terraform-gcp-vpc-native
 module "customername_cluster" {
   # Change the ref below to use a vX.Y.Z release instead of master.
-  source = "git@github.com:/reactiveops/terraform-gke//public-vpc-native?ref=master"
+  source = "git@github.com:/FairwindsOps/terraform-gke//public-vpc-native?ref=master"
 
   name                             = "customername-cluster1"
   region                           = "${local.region}"
