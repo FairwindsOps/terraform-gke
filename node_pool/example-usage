@@ -2,7 +2,7 @@
 # one of the GKE modules from this repository.
 
 module "customername_cluster_node_pool" {
-  source = "git@github.com:/reactiveops/terraform-gke//node_pool"
+  source = "git@github.com:/FairwindsOps/terraform-gke//node_pool"
 
   name             = "node-pool-1"
   region           = "${module.customername_cluster.region}"

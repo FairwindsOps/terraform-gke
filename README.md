@@ -34,4 +34,4 @@ We do not anticipate retrofitting patches to older MINOR versions. If we are cur
   * README and USAGE documentation changes may trigger a PATCH change and should be documented in CHANGELOG
 
 
-[terraform-gcp-vpc-native]: https://github.com/reactiveops/terraform-gcp-vpc-native
+[terraform-gcp-vpc-native]: https://github.com/FairwindsOps/terraform-gcp-vpc-native
