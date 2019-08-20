@@ -1,6 +1,6 @@
 resource "google_container_cluster" "cluster" {
   name               = "${var.name}"
-  region             = "${var.region}"
+  location           = "${var.region}"
   min_master_version = "${var.kubernetes_version}"
   network            = "${var.network_name}"
   subnetwork         = "${var.nodes_subnetwork_name}"

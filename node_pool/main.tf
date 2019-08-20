@@ -26,7 +26,7 @@ resource "random_id" "entropy" {
 resource "google_container_node_pool" "node_pool" {
   name               = "${var.name}-${random_id.entropy.hex}"
   cluster            = "${var.gke_cluster_name}"
-  region             = "${var.region}"
+  location           = "${var.region}"
   version            = "${var.kubernetes_version}"
   initial_node_count = 1
 
