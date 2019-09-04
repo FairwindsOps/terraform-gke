@@ -32,7 +32,6 @@ variable "services_secondary_ip_range_name" {
 }
 
 variable "master_authorized_network_cidrs" {
-  type        = "list"
   description = "A list of up to 20 maps containing `master_authorized_network_cidrs` and `display_name` keys, representing source network CIDRs that are allowed to connect master nodes over HTTPS."
 
   default = [
@@ -46,4 +45,21 @@ variable "master_authorized_network_cidrs" {
 variable "maintenance_policy_start_time" {
   description = "The time (in GMT) when the cluster maintenance window will start."
   default     = "06:00"
+}
+
+variable "enable_private_endpoint" {
+  description = "A boolean to enable private (non public) kube-api endpoints"
+  default     = false
+  type        = bool
+}
+
+variable "enable_private_nodes" {
+  description = "A boolean to enable private (non public) nodes"
+  default     = false
+  type        = bool
+}
+
+variable "master_ipv4_cidr_block" {
+  description = "The /28 range for the master instances. Must be set if enable_private_nodes or enable_private_endpoint is true"
+  default     = null
 }

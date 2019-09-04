@@ -31,3 +31,4 @@ variable "disk_size_in_gb" {
   description = "Disk size, in GB, for the nodes in the pool."
   default     = "100"
 }
+

@@ -13,11 +13,11 @@
 ## a -/+ operation for the nodepool.
 # https://github.com/terraform-providers/terraform-provider-google/issues/1054
 resource "random_id" "entropy" {
-  keepers {
-    machine_type = "${var.machine_type}"
-    name         = "${var.name}"
-    region       = "${var.region}"
-    disk_size    = "${var.disk_size_in_gb}"
+  keepers = {
+    machine_type = var.machine_type
+    name         = var.name
+    region       = var.region
+    disk_size    = var.disk_size_in_gb
   }
 
   byte_length = 2
@@ -25,20 +25,20 @@ resource "random_id" "entropy" {
 
 resource "google_container_node_pool" "node_pool" {
   name               = "${var.name}-${random_id.entropy.hex}"
-  cluster            = "${var.gke_cluster_name}"
-  location           = "${var.region}"
-  version            = "${var.kubernetes_version}"
+  cluster            = var.gke_cluster_name
+  location           = var.region
+  version            = var.kubernetes_version
   initial_node_count = 1
 
   autoscaling {
-    min_node_count = "${var.min_node_count}"
-    max_node_count = "${var.max_node_count}"
+    min_node_count = var.min_node_count
+    max_node_count = var.max_node_count
   }
 
   node_config {
     image_type   = "COS"
-    disk_size_gb = "${var.disk_size_in_gb}"
-    machine_type = "${var.machine_type}"
+    disk_size_gb = var.disk_size_in_gb
+    machine_type = var.machine_type
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -52,3 +52,4 @@ resource "google_container_node_pool" "node_pool" {
     create_before_destroy = true
   }
 }
+
