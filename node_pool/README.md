@@ -68,6 +68,18 @@ Type: `string`
 
 Default: `"n1-standard-4"`
 
+#### node\_labels
+
+Description: Labels to add to the nodes in the pool
+
+Type: `map`
+
+Default:
+
+```json
+{}
+```
+
 
 ## Future To-do Items
 
