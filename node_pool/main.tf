@@ -18,6 +18,7 @@ resource "random_id" "entropy" {
     name         = "${var.name}"
     region       = "${var.region}"
     disk_size    = "${var.disk_size_in_gb}"
+    tags         = "${var.node_pool_tags}"
   }
 
   byte_length = 2

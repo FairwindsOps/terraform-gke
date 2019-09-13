@@ -68,6 +68,18 @@ Type: `string`
 
 Default: `"n1-standard-4"`
 
+#### node\_pool\_tags
+
+Description: List of strings for tags on node pool VMs. These are generally used for firewall rules.
+
+Type: `list`
+
+Default:
+
+```json
+[]
+```
+
 
 ## Future To-do Items
 
