@@ -31,3 +31,8 @@ variable "disk_size_in_gb" {
   description = "Disk size, in GB, for the nodes in the pool."
   default     = "100"
 }
+
+variable "node_labels" {
+  description = "Labels to add to the nodes in the pool"
+  default     = {}
+}

@@ -39,6 +39,7 @@ resource "google_container_node_pool" "node_pool" {
     image_type   = "COS"
     disk_size_gb = "${var.disk_size_in_gb}"
     machine_type = "${var.machine_type}"
+    labels       = "${var.node_labels}"
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
