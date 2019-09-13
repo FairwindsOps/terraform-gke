@@ -40,6 +40,7 @@ resource "google_container_node_pool" "node_pool" {
     disk_size_gb = "${var.disk_size_in_gb}"
     machine_type = "${var.machine_type}"
     labels       = "${var.node_labels}"
+    taint        = "${var.taint}"
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",

@@ -36,3 +36,8 @@ variable "node_labels" {
   description = "Labels to add to the nodes in the pool"
   default     = {}
 }
+
+variable "taint" {
+  description = "Add a taint to the nodes in the pool"
+  default     = {}
+}
