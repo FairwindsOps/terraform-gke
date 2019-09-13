@@ -46,6 +46,8 @@ resource "google_container_node_pool" "node_pool" {
       "https://www.googleapis.com/auth/monitoring",
       "https://www.googleapis.com/auth/compute",
     ]
+
+    tags = ["${var.node_pool_tags}"]
   }
 
   lifecycle {
