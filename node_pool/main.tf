@@ -24,6 +24,7 @@ resource "random_id" "entropy" {
 }
 
 resource "google_container_node_pool" "node_pool" {
+  provider           = "google-beta"
   name               = "${var.name}-${random_id.entropy.hex}"
   cluster            = "${var.gke_cluster_name}"
   location           = "${var.region}"
