@@ -41,3 +41,8 @@ variable "taint" {
   description = "Add a taint to the nodes in the pool"
   default     = {}
 }
+
+variable "disk_type" {
+  description = "Type of the disk attached to each node"
+  default     = "pd-standard"
+}
