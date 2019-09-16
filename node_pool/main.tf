@@ -18,6 +18,8 @@ resource "random_id" "entropy" {
     name         = "${var.name}"
     region       = "${var.region}"
     disk_size    = "${var.disk_size_in_gb}"
+    disk_type    = "${var.disk_type}"
+    labels       = "${jsonencode(var.node_labels)}"
   }
 
   byte_length = 2
