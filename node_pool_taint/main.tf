@@ -18,15 +18,16 @@ resource "random_id" "entropy" {
     name         = "${var.name}"
     region       = "${var.region}"
     disk_size    = "${var.disk_size_in_gb}"
-    tags         = "${join(",", sort(var.node_pool_tags))}"
     disk_type    = "${var.disk_type}"
     labels       = "${jsonencode(var.node_labels)}"
+    taint        = "${jsonencode(var.taint)}"
   }
 
   byte_length = 2
 }
 
 resource "google_container_node_pool" "node_pool" {
+  provider           = "google-beta"
   name               = "${var.name}-${random_id.entropy.hex}"
   cluster            = "${var.gke_cluster_name}"
   location           = "${var.region}"
@@ -43,8 +44,8 @@ resource "google_container_node_pool" "node_pool" {
     disk_size_gb = "${var.disk_size_in_gb}"
     machine_type = "${var.machine_type}"
     labels       = "${var.node_labels}"
+    taint        = ["${var.taint}"]
     disk_type    = "${var.disk_type}"
-    tags         = ["${var.node_pool_tags}"]
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",

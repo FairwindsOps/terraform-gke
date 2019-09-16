@@ -48,6 +48,12 @@ Description: The region for the node pool.
 
 Type: `string`
 
+#### taint
+
+Description: Add a taint to the nodes in the pool
+
+Type: `string`
+
 ### Optional Inputs
 
 The following input variables are optional (have default values):
@@ -60,6 +66,14 @@ Type: `string`
 
 Default: `"100"`
 
+#### disk\_type
+
+Description: Type of the disk attached to each node
+
+Type: `string`
+
+Default: `"pd-standard"`
+
 #### machine\_type
 
 Description: The machine type of nodes in the pool.
@@ -68,28 +82,16 @@ Type: `string`
 
 Default: `"n1-standard-4"`
 
-<<<<<<< HEAD
-#### node\_pool\_tags
-
-Description: List of strings for tags on node pool VMs. These are generally used for firewall rules.
-
-Type: `list`
-=======
 #### node\_labels
 
 Description: Labels to add to the nodes in the pool
 
 Type: `map`
->>>>>>> bl/add-nodepool-taints
 
 Default:
 
 ```json
-<<<<<<< HEAD
-[]
-=======
 {}
->>>>>>> bl/add-nodepool-taints
 ```
 
 
