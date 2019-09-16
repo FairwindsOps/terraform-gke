@@ -1,5 +1,2 @@
-# node-pool-taint-v2.1.0
-- Added the ability to add labels to nodes in a node pool _WILL RECREATE YOUR NODE POOL_! Use this option carefully!
-- Added disk type to the node pool. Accepts the values 'pd-standard' or 'pd-ssd' _WILL RECREATE YOUR NODE POOL_! Use this option carefully!
-- Added the ability to add taints to nodes in the node pool. Taints require the google-beta providor. WILL RECREATE YOUR NODE POOL_! Use this option carefully!
-- Changing to this version will _WILL RECREATE YOUR NODE POOL_!
+# node-pool-taint-v1.0.0
+Initial release of `node-pool-taint` which leverages the `google-beta` provider to apply taints to node pools. This module should be roughly equivalent with the features of `node-pool` in the same repository.
