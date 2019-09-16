@@ -34,7 +34,6 @@ resource "google_container_node_pool" "node_pool" {
   location           = "${var.region}"
   version            = "${var.kubernetes_version}"
   initial_node_count = 1
-  tags               = ["${var.node_tags}"]
 
   autoscaling {
     min_node_count = "${var.min_node_count}"
@@ -48,6 +47,7 @@ resource "google_container_node_pool" "node_pool" {
     labels       = "${var.node_labels}"
     taint        = ["${var.taint}"]
     disk_type    = "${var.disk_type}"
+    tags         = ["${var.node_tags}"]
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
