@@ -32,17 +32,23 @@ variable "disk_size_in_gb" {
   default     = "100"
 }
 
-variable "node_labels" {
-  description = "Labels to add to the nodes in the pool"
-  default     = {}
+variable "node_tags" {
+  type        = "list"
+  description = "List of strings for tags on node pool VMs. These are generally used for firewall rules."
+  default     = []
 }
 
-variable "taint" {
-  description = "Add a taint to the nodes in the pool"
-  type        = "map"
+variable "node_labels" {
+  description = "Key Value Pairs of Labels to add to the nodes in the pool"
+  default     = {}
 }
 
 variable "disk_type" {
   description = "Type of the disk attached to each node"
   default     = "pd-standard"
+}
+
+variable "taint" {
+  description = "Key value pairs of taints to apply on nodes in the pool"
+  type        = "map"
 }

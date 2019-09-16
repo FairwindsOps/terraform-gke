@@ -78,7 +78,7 @@ Default: `"n1-standard-4"`
 
 #### node\_labels
 
-Description: Labels to add to the nodes in the pool
+Description: Key Value Pairs of Labels to add to the nodes in the pool
 
 Type: `map`
 
@@ -88,7 +88,7 @@ Default:
 {}
 ```
 
-#### node\_pool\_tags
+#### node\_tags
 
 Description: List of strings for tags on node pool VMs. These are generally used for firewall rules.
 

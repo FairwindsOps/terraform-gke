@@ -50,9 +50,9 @@ Type: `string`
 
 #### taint
 
-Description: Add a taint to the nodes in the pool
+Description: Key value pairs of taints to apply on nodes in the pool
 
-Type: `string`
+Type: `map`
 
 ### Optional Inputs
 
@@ -84,7 +84,7 @@ Default: `"n1-standard-4"`
 
 #### node\_labels
 
-Description: Labels to add to the nodes in the pool
+Description: Key Value Pairs of Labels to add to the nodes in the pool
 
 Type: `map`
 
@@ -92,6 +92,18 @@ Default:
 
 ```json
 {}
+```
+
+#### node\_tags
+
+Description: List of strings for tags on node pool VMs. These are generally used for firewall rules.
+
+Type: `list`
+
+Default:
+
+```json
+[]
 ```
 
 

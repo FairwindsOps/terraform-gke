@@ -32,14 +32,14 @@ variable "disk_size_in_gb" {
   default     = "100"
 }
 
-variable "node_pool_tags" {
+variable "node_tags" {
   type        = "list"
   description = "List of strings for tags on node pool VMs. These are generally used for firewall rules."
   default     = []
 }
 
 variable "node_labels" {
-  description = "Labels to add to the nodes in the pool"
+  description = "Key Value Pairs of Labels to add to the nodes in the pool"
   default     = {}
 }
 
