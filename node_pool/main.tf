@@ -18,7 +18,7 @@ resource "random_id" "entropy" {
     name         = "${var.name}"
     region       = "${var.region}"
     disk_size    = "${var.disk_size_in_gb}"
-    tags         = "${join(",", sort(var.node_pool_tags))}"
+    tags         = "${join(",", sort(var.node_tags))}"
     disk_type    = "${var.disk_type}"
     labels       = "${jsonencode(var.node_labels)}"
   }
@@ -44,7 +44,7 @@ resource "google_container_node_pool" "node_pool" {
     machine_type = "${var.machine_type}"
     labels       = "${var.node_labels}"
     disk_type    = "${var.disk_type}"
-    tags         = ["${var.node_pool_tags}"]
+    tags         = ["${var.node_tags}"]
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
