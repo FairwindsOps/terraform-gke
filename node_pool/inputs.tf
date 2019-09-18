@@ -10,6 +10,11 @@ variable "region" {
   description = "The region for the node pool."
 }
 
+variable "initial_node_count" {
+  description = "The initial node count for the pool, per availability zone."
+  default     = "1"
+}
+
 variable "min_node_count" {
   description = "Minimum number of nodes for autoscaling, per availability zone."
 }
