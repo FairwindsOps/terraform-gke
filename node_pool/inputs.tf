@@ -11,7 +11,7 @@ variable "region" {
 }
 
 variable "initial_node_count" {
-  description = "The initial node count for the pool, per availability zone."
+  description = "The initial node count for the pool, per availability zone. Changing this will force recreation of the resource."
   default     = "1"
 }
 

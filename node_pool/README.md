@@ -68,6 +68,14 @@ Type: `string`
 
 Default: `"pd-standard"`
 
+#### initial\_node\_count
+
+Description: The initial node count for the pool, per availability zone. Changing this will force recreation of the resource.
+
+Type: `string`
+
+Default: `"1"`
+
 #### machine\_type
 
 Description: The machine type of nodes in the pool.
