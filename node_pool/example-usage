@@ -2,7 +2,8 @@
 # one of the GKE modules from this repository.
 
 module "customername_cluster_node_pool" {
-  source = "git@github.com:/FairwindsOps/terraform-gke//node_pool"
+  # Change the ref below to use a vX.Y.Z release instead of master.
+  source = "git@github.com:/FairwindsOps/terraform-gke//node_pool?ref=master"
 
   name             = "node-pool-1"
   region           = "${module.customername_cluster.region}"
