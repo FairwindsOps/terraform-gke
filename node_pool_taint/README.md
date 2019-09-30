@@ -48,6 +48,12 @@ Description: The region for the node pool.
 
 Type: `string`
 
+#### taint
+
+Description: Key value pairs of taints to apply on nodes in the pool
+
+Type: `map`
+
 ### Optional Inputs
 
 The following input variables are optional (have default values):

@@ -21,6 +21,7 @@ resource "random_id" "entropy" {
     tags               = "${join(",", sort(var.node_tags))}"
     disk_type          = "${var.disk_type}"
     labels             = "${jsonencode(var.node_labels)}"
+    taint              = "${jsonencode(var.taint)}"
     initial_node_count = "${var.initial_node_count}"
   }
 
@@ -28,6 +29,7 @@ resource "random_id" "entropy" {
 }
 
 resource "google_container_node_pool" "node_pool" {
+  provider           = "google-beta"
   name               = "${var.name}-${random_id.entropy.hex}"
   cluster            = "${var.gke_cluster_name}"
   location           = "${var.region}"
@@ -44,6 +46,7 @@ resource "google_container_node_pool" "node_pool" {
     disk_size_gb = "${var.disk_size_in_gb}"
     machine_type = "${var.machine_type}"
     labels       = "${var.node_labels}"
+    taint        = ["${var.taint}"]
     disk_type    = "${var.disk_type}"
     tags         = ["${var.node_tags}"]
 
