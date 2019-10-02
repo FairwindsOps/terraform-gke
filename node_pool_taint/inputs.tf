@@ -52,3 +52,8 @@ variable "disk_type" {
   description = "Type of the disk attached to each node"
   default     = "pd-standard"
 }
+
+variable "taint" {
+  description = "Key value pairs of taints to apply on nodes in the pool"
+  type        = "map"
+}

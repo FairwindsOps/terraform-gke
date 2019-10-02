@@ -3,7 +3,7 @@
 
 module "customername_cluster_node_pool" {
   # Change the ref below to use a vX.Y.Z release instead of master.
-  source = "git@github.com:/FairwindsOps/terraform-gke//node_pool?ref=master"
+  source = "git@github.com:/FairwindsOps/terraform-gke//node_pool_taint?ref=master"
 
   name             = "node-pool-1"
   region           = "${module.customername_cluster.region}"
@@ -11,6 +11,12 @@ module "customername_cluster_node_pool" {
   machine_type     = "n1-standard-2"
   min_node_count   = "1"
   max_node_count   = "1"
+
+  taint = {
+    key    = "special"
+    value  = "true"
+    effect = "NO_SCHEDULE"
+  }
 
   # Match the Kubernetes version from the GKE cluster!
   kubernetes_version = "${module.customername_cluster.kubernetes_version}"
