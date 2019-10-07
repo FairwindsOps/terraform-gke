@@ -1,3 +1,7 @@
+# node-pool-v3.0.0
+## breaking change
+- Updated module to support terraform >= 0.12
+
 # node-pool-v2.0.0
 - Added tags to be able to assign specific firewall rules to node pools in GCP - NOTE: Adding tags to nodepools _WILL RECREATE YOUR NODE POOL_! Use this option carefully!
 - Added disk type to the node pool. Accepts the values 'pd-standard' or 'pd-ssd' _WILL RECREATE YOUR NODE POOL_! Use this option carefully!
