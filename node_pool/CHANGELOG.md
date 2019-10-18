@@ -1,3 +1,7 @@
+# node-pool-v2.1.0
+- Addded ability to add additional oauth scopes to a node pool
+  - NOTE: changing oauth scopes will recreate your node pool
+
 # node-pool-v2.0.0
 - Added tags to be able to assign specific firewall rules to node pools in GCP - NOTE: Adding tags to nodepools _WILL RECREATE YOUR NODE POOL_! Use this option carefully!
 - Added disk type to the node pool. Accepts the values 'pd-standard' or 'pd-ssd' _WILL RECREATE YOUR NODE POOL_! Use this option carefully!

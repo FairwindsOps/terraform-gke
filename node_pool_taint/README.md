@@ -114,6 +114,17 @@ Default:
 []
 ```
 
+#### additional\_oauth\_scope
+
+Descriptio: List of strings for additional oauth scope in a node config
+
+Type: `list`
+
+Default:
+
+```json
+[]
+```
 
 ## Future To-do Items
 
