@@ -52,3 +52,9 @@ variable "disk_type" {
   description = "Type of the disk attached to each node"
   default     = "pd-standard"
 }
+
+variable "additional_oauth_scopes" {
+  type        = "list"
+  description = "List of strings for additional oauth scope in a node config"
+  default     = []
+}

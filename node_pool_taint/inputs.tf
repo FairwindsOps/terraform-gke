@@ -57,3 +57,9 @@ variable "taint" {
   description = "Key value pairs of taints to apply on nodes in the pool"
   type        = "map"
 }
+
+variable "additional_oauth_scopes" {
+  type        = "list"
+  description = "List of strings for additional oauth scope in a node config"
+  default     = []
+}
