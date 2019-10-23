@@ -38,13 +38,14 @@ variable "disk_size_in_gb" {
 }
 
 variable "node_tags" {
-  type        = "list"
+  type        = list
   description = "List of strings for tags on node pool VMs. These are generally used for firewall rules."
   default     = []
 }
 
 variable "node_labels" {
   description = "Key Value Pairs of Labels to add to the nodes in the pool"
+  type        = map
   default     = {}
 }
 
@@ -54,7 +55,7 @@ variable "disk_type" {
 }
 
 variable "additional_oauth_scopes" {
-  type        = "list"
+  type        = list
   description = "List of strings for additional oauth scope in a node config"
   default     = []
 }

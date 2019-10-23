@@ -38,7 +38,7 @@ variable "disk_size_in_gb" {
 }
 
 variable "node_tags" {
-  type        = "list"
+  type        = list
   description = "List of strings for tags on node pool VMs. These are generally used for firewall rules."
   default     = []
 }
@@ -55,11 +55,11 @@ variable "disk_type" {
 
 variable "taint" {
   description = "Key value pairs of taints to apply on nodes in the pool"
-  type        = "map"
+  type        = map
 }
 
 variable "additional_oauth_scopes" {
-  type        = "list"
+  type        = list
   description = "List of strings for additional oauth scope in a node config"
   default     = []
 }

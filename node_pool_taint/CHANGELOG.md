@@ -1,3 +1,7 @@
+# node-pool-taint-v2.0.0
+## breaking change
+- Updated module to support terraform >= 0.12
+
 # node-pool-taint-v1.1.0
 - added ability to add additional_oauth_scopes to node pools
   - NOTE: changing oauth scopes will recreate your node pool

@@ -1,3 +1,7 @@
+# node-pool-v3.0.0
+## breaking change
+- Updated module to support terraform >= 0.12
+
 # node-pool-v2.1.0
 - Addded ability to add additional oauth scopes to a node pool
   - NOTE: changing oauth scopes will recreate your node pool

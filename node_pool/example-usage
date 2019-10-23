@@ -6,12 +6,12 @@ module "customername_cluster_node_pool" {
   source = "git@github.com:/FairwindsOps/terraform-gke//node_pool?ref=master"
 
   name             = "node-pool-1"
-  region           = "${module.customername_cluster.region}"
-  gke_cluster_name = "${module.customername_cluster.name}"
+  region           = module.customername_cluster.region
+  gke_cluster_name = module.customername_cluster.name
   machine_type     = "n1-standard-2"
   min_node_count   = "1"
   max_node_count   = "1"
 
   # Match the Kubernetes version from the GKE cluster!
-  kubernetes_version = "${module.customername_cluster.kubernetes_version}"
+  kubernetes_version = module.customername_cluster.kubernetes_version
 }
