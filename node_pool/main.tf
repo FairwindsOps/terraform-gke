@@ -28,6 +28,15 @@ resource "random_id" "entropy" {
   byte_length = 2
 }
 
+locals {
+  base_oauth_scope = [
+    "https://www.googleapis.com/auth/devstorage.read_only",
+    "https://www.googleapis.com/auth/logging.write",
+    "https://www.googleapis.com/auth/monitoring",
+    "https://www.googleapis.com/auth/compute",
+  ]
+}
+
 resource "google_container_node_pool" "node_pool" {
   name               = "${var.name}-${random_id.entropy.hex}"
   cluster            = var.gke_cluster_name
@@ -48,12 +57,7 @@ resource "google_container_node_pool" "node_pool" {
     disk_type    = var.disk_type
     tags         = var.node_tags
 
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/devstorage.read_only",
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring",
-      "https://www.googleapis.com/auth/compute",
-    ]
+    oauth_scopes = concat(local.base_oauth_scope, var.additional_oauth_scopes)
   }
 
   lifecycle {
