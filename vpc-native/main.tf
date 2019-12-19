@@ -30,10 +30,9 @@ resource "google_container_cluster" "cluster" {
     master_ipv4_cidr_block  = var.master_ipv4_cidr_block
   }
 
-  # Disable automatic kubernetes dashboard
   addons_config {
-    kubernetes_dashboard {
-      disabled = true
+    network_policy_config {
+      disabled = false
     }
   }
 
