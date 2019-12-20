@@ -60,6 +60,11 @@ resource "google_container_node_pool" "node_pool" {
     oauth_scopes = concat(local.base_oauth_scope, var.additional_oauth_scopes)
   }
 
+  management {
+    auto_repair  = var.auto_repair
+    auto_upgrade = var.auto_upgrade
+  }
+
   lifecycle {
     create_before_destroy = true
   }
