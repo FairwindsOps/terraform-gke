@@ -110,7 +110,7 @@ Default:
 
 #### additional\_oauth\_scope
 
-Descriptio: List of strings for additional oauth scope in a node config
+Description: List of strings for additional oauth scope in a node config
 
 Type: `list`
 
@@ -119,6 +119,23 @@ Default:
 ```json
 []
 ```
+
+#### auto\_repair
+
+Description: Whether the nodes will be automatically repaired
+
+Type: `bool`
+
+Default: `true`
+
+#### auto\_upgrade
+
+Description: Whether the nodes will be automatically upgraded
+
+Type: `bool`
+
+Default: `false`
+
 
 ## Future To-do Items
 

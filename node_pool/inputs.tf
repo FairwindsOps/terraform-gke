@@ -59,3 +59,14 @@ variable "additional_oauth_scopes" {
   description = "List of strings for additional oauth scope in a node config"
   default     = []
 }
+
+variable "auto_repair" {
+  description = "Whether the nodes will be automatically repaired"
+  default     = true
+}
+
+
+variable "auto_upgrade" {
+  description = "Whether the nodes will be automatically upgraded"
+  default     = false
+}
