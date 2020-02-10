@@ -4,6 +4,8 @@ resource "google_container_cluster" "cluster" {
   min_master_version = var.kubernetes_version
   network            = var.network_name
   subnetwork         = var.nodes_subnetwork_name
+  monitoring_service = var.monitoring_service
+  logging_service    = var.logging_service
 
   ip_allocation_policy {
     cluster_secondary_range_name  = var.pods_secondary_ip_range_name
