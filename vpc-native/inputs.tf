@@ -64,3 +64,12 @@ variable "master_ipv4_cidr_block" {
   default     = null
 }
 
+variable "monitoring_service" {
+  description = "The monitoring service to write metrics to"
+  default     = "monitoring.googleapis.com/kubernetes"
+}
+
+variable "logging_service" {
+  description = "The logging service to write logs to"
+  default     = "logging.googleapis.com/kubernetes"
+}

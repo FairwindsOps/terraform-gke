@@ -63,3 +63,13 @@ variable "master_ipv4_cidr_block" {
   description = "The /28 range for the master instances. Must be set if enable_private_nodes or enable_private_endpoint is true"
   default     = null
 }
+
+variable "monitoring_service" {
+  description = "The monitoring service to write metrics to"
+  default     = "monitoring.googleapis.com/kubernetes"
+}
+
+variable "logging_service" {
+  description = "The logging service to write logs to"
+  default     = "logging.googleapis.com/kubernetes"
+}
