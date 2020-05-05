@@ -63,3 +63,8 @@ variable "additional_oauth_scopes" {
   description = "List of strings for additional oauth scope in a node config"
   default     = []
 }
+
+variable "preemptible_nodes" {
+  description = "Whether to use preemptible nodes"
+  default     = false
+}
