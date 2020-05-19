@@ -56,6 +56,7 @@ resource "google_container_node_pool" "node_pool" {
     labels       = var.node_labels
     disk_type    = var.disk_type
     tags         = var.node_tags
+    preemptible  = var.preemptible_nodes
 
     oauth_scopes = concat(local.base_oauth_scope, var.additional_oauth_scopes)
   }

@@ -65,8 +65,12 @@ variable "auto_repair" {
   default     = true
 }
 
-
 variable "auto_upgrade" {
   description = "Whether the nodes will be automatically upgraded"
+  default     = false
+}
+
+variable "preemptible_nodes" {
+  description = "Whether to use preemptible nodes"
   default     = false
 }

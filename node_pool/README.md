@@ -136,6 +136,13 @@ Type: `bool`
 
 Default: `false`
 
+#### preemptible\_nodes
+
+Description: Whether to use preemptible nodes
+
+Type: `bool`
+
+Default: `false`
 
 ## Future To-do Items
 
