@@ -8,22 +8,6 @@ This module requires version 2.0.0 or above of the Google Terraform provider.
 
 See the file [example-usage](./example-usage) for an example of how to use this module. Below are the available module inputs:
 
-### Requirements
-
-The following requirements are needed by this module:
-
-- terraform (>= 0.12)
-
-- google-beta (>=2.5.0)
-
-### Providers
-
-The following providers are used by this module:
-
-- google-beta (>=2.5.0)
-
-- random
-
 ### Required Inputs
 
 The following input variables are required:
@@ -32,37 +16,37 @@ The following input variables are required:
 
 Description: The name of the GKE cluster to bind this node pool.
 
-Type: `any`
+Type: `string`
 
 #### kubernetes\_version
 
 Description: The kubernetes version for the nodes in the pool. This should match the Kubernetes version of the GKE cluster.
 
-Type: `any`
+Type: `string`
 
 #### max\_node\_count
 
 Description: Maximum number of nodes for autoscaling, per availability zone.
 
-Type: `any`
+Type: `string`
 
 #### min\_node\_count
 
 Description: Minimum number of nodes for autoscaling, per availability zone.
 
-Type: `any`
+Type: `string`
 
 #### name
 
 Description: The name of the node pool. A random string will be appended to this name, to allow replacement node pools to be created before destroying the current pool.
 
-Type: `any`
+Type: `string`
 
 #### region
 
 Description: The region for the node pool.
 
-Type: `any`
+Type: `string`
 
 #### taint
 
@@ -73,14 +57,6 @@ Type: `map`
 ### Optional Inputs
 
 The following input variables are optional (have default values):
-
-#### additional\_oauth\_scopes
-
-Description: List of strings for additional oauth scope in a node config
-
-Type: `list`
-
-Default: `[]`
 
 #### disk\_size\_in\_gb
 
@@ -120,7 +96,11 @@ Description: Key Value Pairs of Labels to add to the nodes in the pool
 
 Type: `map`
 
-Default: `{}`
+Default:
+
+```json
+{}
+```
 
 #### node\_tags
 
@@ -128,7 +108,23 @@ Description: List of strings for tags on node pool VMs. These are generally used
 
 Type: `list`
 
-Default: `[]`
+Default:
+
+```json
+[]
+```
+
+#### additional\_oauth\_scope
+
+Descriptio: List of strings for additional oauth scope in a node config
+
+Type: `list`
+
+Default:
+
+```json
+[]
+```
 
 #### preemptible\_nodes
 
@@ -137,11 +133,6 @@ Description: Whether to use preemptible nodes
 Type: `bool`
 
 Default: `false`
-
-### Outputs
-
-No output.
-
 
 ## Future To-do Items
 
