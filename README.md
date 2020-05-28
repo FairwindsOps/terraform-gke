@@ -1,5 +1,5 @@
 # Terraform GKE
-This repository contains the standard modules for GKE cluster implementations, and is a work in progress. The GKE cluster modules are adaptable, and allow for separate node pool modules from the cluster modules themselves. Right now, the `public-vpc-native` and `node_pool` modules are ready for usage. This repository only contains GKE-related resources -- underlying network resources need to be provided. See the [terraform-gcp-vpc-native][] repository.
+This repository contains modules for GKE cluster implementations, and is a work in progress. The GKE cluster modules are adaptable, and allow for separate node pool modules from the cluster modules themselves. This repository only contains GKE-related resources -- underlying network resources need to be provided. See the [terraform-gcp-vpc-native][] repository.
 
 
 ## Usage
