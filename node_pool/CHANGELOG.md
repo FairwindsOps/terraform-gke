@@ -1,3 +1,6 @@
+# node-pool-v3.2.1
+- patch fix to generate a new random id when the additional_oauth_scopes var changes because that forces the node pool to be replaced
+
 # node-pool-v3.0.0
 ## breaking change
 - Updated module to support terraform >= 0.12

@@ -15,14 +15,15 @@
 
 resource "random_id" "entropy" {
   keepers = {
-    machine_type       = var.machine_type
-    name               = var.name
-    region             = var.region
-    disk_size          = var.disk_size_in_gb
-    tags               = join(",", sort(var.node_tags))
-    disk_type          = var.disk_type
-    labels             = jsonencode(var.node_labels)
-    initial_node_count = var.initial_node_count
+    machine_type            = var.machine_type
+    name                    = var.name
+    region                  = var.region
+    disk_size               = var.disk_size_in_gb
+    tags                    = join(",", sort(var.node_tags))
+    disk_type               = var.disk_type
+    labels                  = jsonencode(var.node_labels)
+    initial_node_count      = var.initial_node_count
+    additional_oauth_scopes = join(",", sort(var.additional_oauth_scopes))
   }
 
   byte_length = 2
