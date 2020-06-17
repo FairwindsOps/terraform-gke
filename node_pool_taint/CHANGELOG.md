@@ -1,3 +1,6 @@
+# node-pool-taint-v2.1.1
+- patch fix to generate a new random id when the additional_oauth_scopes var changes because that forces the node pool to be replaced
+
 # node-pool-taint-v2.0.0
 ## breaking change
 - Updated module to support terraform >= 0.12
