@@ -73,3 +73,13 @@ variable "logging_service" {
   description = "The logging service to write logs to"
   default     = "logging.googleapis.com/kubernetes"
 }
+
+variable "istio_disabled" {
+  description = "If set to false, then istio will be turned on"
+  default     = true
+}
+
+variable "istio_auth" {
+  description = "The authentication type between services in Istio. Available options include [AUTH_NONE AUTH_MUTUAL_TLS]"
+  default     = "AUTH_MUTUAL_TLS"
+}
