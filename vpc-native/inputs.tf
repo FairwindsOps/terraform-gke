@@ -76,5 +76,5 @@ variable "logging_service" {
 
 variable "vpa_enabled" {
   description = "A boolean to enable VPA for the cluster"
-  default = false
+  default     = false
 }
