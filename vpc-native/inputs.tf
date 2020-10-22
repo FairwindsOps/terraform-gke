@@ -73,3 +73,8 @@ variable "logging_service" {
   description = "The logging service to write logs to"
   default     = "logging.googleapis.com/kubernetes"
 }
+
+variable "vpa_enabled" {
+  description = "A boolean to enable VPA for the cluster"
+  default     = false
+}

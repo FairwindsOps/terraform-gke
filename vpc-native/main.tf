@@ -7,6 +7,11 @@ resource "google_container_cluster" "cluster" {
   monitoring_service = var.monitoring_service
   logging_service    = var.logging_service
 
+
+  vertical_pod_autoscaling {
+    enabled = var.vpa_enabled
+  }
+
   ip_allocation_policy {
     cluster_secondary_range_name  = var.pods_secondary_ip_range_name
     services_secondary_range_name = var.services_secondary_ip_range_name
