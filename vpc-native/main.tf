@@ -1,3 +1,7 @@
+locals {
+  cluster_workload_identity_namespace = var.workload_identity ? ["${var.project}.svc.id.goog"] : []
+}
+
 resource "google_container_cluster" "cluster" {
   name               = var.name
   location           = var.region
@@ -40,6 +44,13 @@ resource "google_container_cluster" "cluster" {
   addons_config {
     network_policy_config {
       disabled = false
+    }
+  }
+
+  dynamic "workload_identity_config" {
+    for_each = local.cluster_workload_identity_namespace
+    content {
+      identity_namespace = local.cluster_workload_identity_namespace[0]
     }
   }
 
