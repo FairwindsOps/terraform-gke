@@ -79,7 +79,7 @@ variable "vpa_enabled" {
   default     = false
 }
 
-variable "workload_identity" {
+variable "enable_workload_identity" {
   type        = bool
   description = "A boolean to enable workload identity"
   default     = false

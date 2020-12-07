@@ -1,5 +1,5 @@
 locals {
-  cluster_workload_identity_namespace = var.workload_identity ? ["${var.project}.svc.id.goog"] : []
+  cluster_workload_identity_namespace = var.enable_workload_identity ? ["${var.project}.svc.id.goog"] : []
 }
 
 resource "google_container_cluster" "cluster" {
