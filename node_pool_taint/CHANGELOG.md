@@ -1,3 +1,6 @@
+# node-pool-taint-v2.2.0
+- Added `node_metadata` parameter to control node metadata provided to workload, so that [workload identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) functionality may be used.
+
 # node-pool-taint-v2.1.1
 - patch fix to generate a new random id when the additional_oauth_scopes var changes because that forces the node pool to be replaced
 

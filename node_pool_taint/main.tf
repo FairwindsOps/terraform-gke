@@ -36,6 +36,10 @@ locals {
     "https://www.googleapis.com/auth/monitoring",
     "https://www.googleapis.com/auth/compute",
   ]
+
+  cluster_node_metadata_config = var.node_metadata == "UNSPECIFIED" ? [] : [{
+    node_metadata = var.node_metadata
+  }]
 }
 
 resource "google_container_node_pool" "node_pool" {
@@ -72,6 +76,13 @@ resource "google_container_node_pool" "node_pool" {
     disk_type   = var.disk_type
     tags        = var.node_tags
     preemptible = var.preemptible_nodes
+
+    dynamic "workload_metadata_config" {
+      for_each = local.cluster_node_metadata_config
+      content {
+        node_metadata = workload_metadata_config.value.node_metadata
+      }
+    }
 
     oauth_scopes = concat(local.base_oauth_scope, var.additional_oauth_scopes)
   }
