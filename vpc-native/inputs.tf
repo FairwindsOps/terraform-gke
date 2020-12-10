@@ -78,3 +78,9 @@ variable "vpa_enabled" {
   description = "A boolean to enable VPA for the cluster"
   default     = false
 }
+
+variable "enable_workload_identity" {
+  type        = bool
+  description = "A boolean to enable workload identity"
+  default     = false
+}

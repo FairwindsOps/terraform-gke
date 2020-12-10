@@ -25,4 +25,5 @@ See the file [example-usage](./example-usage) for an example of how to use this 
 | `maintenance_policy_start_time`    | Maintenance Window (GMT)                            | `06:00`         |
 | `enable_private_endpoint`          | Private Kube API endpoint                           | `false`          |
 | `enable_private_nodes`             | Private compute instances                           | `false`          |
+| `enable_workload_identity`         | Enable workload identity for the cluster            | `false`         |
 | `master_ipv4_cidr_block`           | IPV4 CIDR block for controlplane (must be /28)      | `null`          |
