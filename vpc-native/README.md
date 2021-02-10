@@ -4,7 +4,7 @@ Requirements:
 `terraform` >= `0.12.x`
 terraform provider `google` >= `2.5.0`
 
-This module manages a Google Kubernetes Engine (GKE) VPC Native cluster. The subnet CIDRs used for cluster nodes, pods, and services, are specified in the form of existing Google Compute secondary IP ranges. Use a separate Terraform module, such as [this `terraform-gcp-vpc-native/cloud-nat` one](https://github.com/FairwindsOps/terraform-gcp-vpc-native/tree/master/cloud-nat), to create these network resources in advance.
+This module manages a Google Kubernetes Engine (GKE) VPC Native cluster. The subnet CIDRs used for cluster nodes, pods, and services, are specified in the form of existing Google Compute secondary IP ranges. Use a separate Terraform module, such as [this `terraform-gcp-vpc-native/default` one](https://github.com/FairwindsOps/terraform-gcp-vpc-native/tree/master/default), to create these network resources in advance.
 
 To provision a cluster with a private kubernetes api or a private node group, specify `enable_private_endpoint` and/or `enable_private_nodes`. If either private booleans are true, `master_ipv4_cidr_block` MUST be declared.
 
