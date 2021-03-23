@@ -3,13 +3,14 @@ locals {
 }
 
 resource "google_container_cluster" "cluster" {
-  name               = var.name
-  location           = var.region
-  min_master_version = var.kubernetes_version
-  network            = var.network_name
-  subnetwork         = var.nodes_subnetwork_name
-  monitoring_service = var.monitoring_service
-  logging_service    = var.logging_service
+  name                  = var.name
+  location              = var.region
+  min_master_version    = var.kubernetes_version
+  network               = var.network_name
+  subnetwork            = var.nodes_subnetwork_name
+  monitoring_service    = var.monitoring_service
+  logging_service       = var.logging_service
+  enable_shielded_nodes = var.enable_shielded_nodes
 
 
   vertical_pod_autoscaling {

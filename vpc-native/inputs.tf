@@ -84,3 +84,9 @@ variable "enable_workload_identity" {
   description = "A boolean to enable workload identity"
   default     = false
 }
+
+variable "enable_shielded_nodes" {
+  type        = bool
+  description = "A boolean to enable cluster-wide shielded nodes"
+  default     = false
+}
