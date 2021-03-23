@@ -80,3 +80,9 @@ variable "node_metadata" {
   default     = "UNSPECIFIED"
   type        = string
 }
+
+variable "enable_secure_boot" {
+  type        = bool
+  description = "If shielded nodes is enabled at the cluster level, you can optionally set this to enable secure boot on shielded nodes."
+  default     = false
+}

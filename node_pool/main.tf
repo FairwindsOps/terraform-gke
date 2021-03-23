@@ -24,6 +24,7 @@ resource "random_id" "entropy" {
     labels                  = jsonencode(var.node_labels)
     initial_node_count      = var.initial_node_count
     additional_oauth_scopes = join(",", sort(var.additional_oauth_scopes))
+    enable_secure_boot      = var.enable_secure_boot
   }
 
   byte_length = 2
@@ -62,6 +63,9 @@ resource "google_container_node_pool" "node_pool" {
     disk_type    = var.disk_type
     tags         = var.node_tags
     preemptible  = var.preemptible_nodes
+    shielded_instance_config {
+      enable_secure_boot = var.enable_secure_boot
+    }
 
     dynamic "workload_metadata_config" {
       for_each = local.cluster_node_metadata_config
