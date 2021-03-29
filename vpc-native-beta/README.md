@@ -32,3 +32,4 @@ See the file [example-usage](./example-usage) for an example of how to use this 
 | `vpa_enabled`                      | A boolean to enable VPA for the cluster             | `false`                                 |
 | `enable_workload_identity`         | A boolean to enable workload identity               | `false`                                 |
 | `enable_shielded_nodes`            | A boolean to enable cluster-wide shielded nodes     | `false`                                 |
+| `enable_node_local_dns_cache`      | A boolean to enable NodeLocal DNSCache              | `true`                                  |
