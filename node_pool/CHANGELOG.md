@@ -1,3 +1,5 @@
+# node-pool-v3.3.1
+- Added the ability to enable secure boot on nodes when the cluster uses shielded nodes. This can be enabled with the variable `enable_secure_boot`
 # node-pool-v3.3.0
 - Added `node_metadata` parameter to control node metadata provided to workload, so that [workload identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) functionality may be used.
 
