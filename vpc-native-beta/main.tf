@@ -1,5 +1,6 @@
 locals {
   cluster_workload_identity_namespace = var.enable_workload_identity ? ["${var.project}.svc.id.goog"] : []
+  metering_bigquery_dataset           = length(var.metering_bigquery_dataset) > 0 ? [var.metering_bigquery_dataset] : []
 }
 
 resource "google_container_cluster" "cluster" {
@@ -56,6 +57,16 @@ resource "google_container_cluster" "cluster" {
     for_each = local.cluster_workload_identity_namespace
     content {
       identity_namespace = local.cluster_workload_identity_namespace[0]
+    }
+  }
+
+  dynamic "resource_usage_export_config" {
+    for_each                             = local.metering_bigquery_dataset
+    content {
+      enable_network_egress_metering       = var.enable_network_egress_metering
+      bigquery_destination {
+        dataset_id = var.metering_bigquery_dataset
+      }
     }
   }
 

@@ -90,3 +90,15 @@ variable "enable_shielded_nodes" {
   description = "A boolean to enable cluster-wide shielded nodes"
   default     = false
 }
+
+variable "metering_bigquery_dataset" {
+  type        = string
+  description = "BigQuery dataset name to send GKE metering data to. Setting a value here implicitly enables GKE Usage Metering."
+  default     = ""
+}
+
+variable "enable_network_egress_metering" {
+  type        = bool
+  description = "Boolean to turn on Network Egress Metering. Only useful if metering_bigquery_dataset variable is set."
+  default     = false
+}

@@ -33,3 +33,5 @@ See the file [example-usage](./example-usage) for an example of how to use this 
 | `enable_workload_identity`         | A boolean to enable workload identity               | `false`                                 |
 | `enable_shielded_nodes`            | A boolean to enable cluster-wide shielded nodes     | `false`                                 |
 | `enable_node_local_dns_cache`      | A boolean to enable NodeLocal DNSCache              | `true`                                  |
+| `metering_bigquery_dataset`        | BigQuery dataset name to send GKE metering data to. Setting a value here implicitly enables GKE Usage Metering. | `""`    |
+| `enable_network_egress_metering`   | Boolean to turn on Network Egress Metering. Only useful if metering_bigquery_dataset variable is set.           | `false` |

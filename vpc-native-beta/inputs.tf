@@ -96,3 +96,15 @@ variable "enable_node_local_dns_cache" {
   description = "A boolean to enable NodeLocal DNSCache"
   default     = true
 }
+
+variable "metering_bigquery_dataset" {
+  type        = string
+  description = "BigQuery dataset name to send GKE metering data to. Setting a value here implicitly enables GKE Usage Metering."
+  default     = ""
+}
+
+variable "enable_network_egress_metering" {
+  type        = bool
+  description = "Boolean to turn on Network Egress Metering. Only useful if metering_bigquery_dataset variable is set."
+  default     = false
+}
