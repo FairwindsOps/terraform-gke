@@ -86,3 +86,8 @@ variable "enable_secure_boot" {
   description = "If shielded nodes is enabled at the cluster level, you can optionally set this to enable secure boot on shielded nodes."
   default     = false
 }
+
+variable "taint" {
+  description = "Key value pairs of taints to apply on nodes in the pool"
+  type        = map
+}

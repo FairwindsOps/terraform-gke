@@ -74,6 +74,20 @@ resource "google_container_node_pool" "node_pool" {
       }
     }
 
+    dynamic "taint" {
+      for_each = [var.taint]
+      content {
+        # TF-UPGRADE-TODO: The automatic upgrade tool can't predict
+        # which keys might be set in maps assigned here, so it has
+        # produced a comprehensive set here. Consider simplifying
+        # this after confirming which keys can be set in practice.
+
+        effect = taint.value.effect
+        key    = taint.value.key
+        value  = taint.value.value
+      }
+    }
+
     oauth_scopes = concat(local.base_oauth_scope, var.additional_oauth_scopes)
   }
 
