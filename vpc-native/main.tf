@@ -47,6 +47,10 @@ resource "google_container_cluster" "cluster" {
     network_policy_config {
       disabled = false
     }
+    istio_config {
+      disabled = {{ var.istio_disabled }}
+      auth    = "AUTH_MUTUAL_TLS"
+    }
   }
 
   dynamic "workload_identity_config" {
