@@ -102,9 +102,3 @@ variable "enable_network_egress_metering" {
   description = "Boolean to turn on Network Egress Metering. Only useful if metering_bigquery_dataset variable is set."
   default     = false
 }
-
-variable "istio_disabled" {
-  type        = bool
-  description = "If set to false, istio will be enabled in the cluster"
-  default     = true
-}
