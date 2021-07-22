@@ -48,7 +48,7 @@ resource "google_container_cluster" "cluster" {
       disabled = false
     }
     istio_config {
-      disabled = {{ var.istio_disabled }}
+      disabled = var.istio_disabled
       auth    = "AUTH_MUTUAL_TLS"
     }
   }
