@@ -108,3 +108,9 @@ variable "enable_network_egress_metering" {
   description = "Boolean to turn on Network Egress Metering. Only useful if metering_bigquery_dataset variable is set."
   default     = false
 }
+
+variable "enabled_confidential_nodes" {
+  type = bool
+  description = "Boolean to turn on confidential nodes for the cluster."
+  default = false
+}
