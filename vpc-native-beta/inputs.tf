@@ -32,7 +32,7 @@ variable "services_secondary_ip_range_name" {
 }
 
 variable "master_authorized_network_cidrs" {
-  type        = list
+  type        = list(any)
   description = "A list of up to 20 maps containing `master_authorized_network_cidrs` and `display_name` keys, representing source network CIDRs that are allowed to connect master nodes over HTTPS."
 
   default = [
@@ -106,5 +106,11 @@ variable "metering_bigquery_dataset" {
 variable "enable_network_egress_metering" {
   type        = bool
   description = "Boolean to turn on Network Egress Metering. Only useful if metering_bigquery_dataset variable is set."
+  default     = false
+}
+
+variable "enabled_confidential_nodes" {
+  type        = bool
+  description = "Boolean to turn on confidential nodes for the cluster."
   default     = false
 }
