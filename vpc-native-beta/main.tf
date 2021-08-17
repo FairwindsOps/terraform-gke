@@ -62,9 +62,9 @@ resource "google_container_cluster" "cluster" {
   }
 
   dynamic "resource_usage_export_config" {
-    for_each                             = local.metering_bigquery_dataset
+    for_each = local.metering_bigquery_dataset
     content {
-      enable_network_egress_metering       = var.enable_network_egress_metering
+      enable_network_egress_metering = var.enable_network_egress_metering
       bigquery_destination {
         dataset_id = var.metering_bigquery_dataset
       }
@@ -73,7 +73,7 @@ resource "google_container_cluster" "cluster" {
 
   dynamic "confidential_nodes" {
     for_each = local.confidential_nodes_enabled
-     content {
+    content {
       enabled = true
     }
   }
