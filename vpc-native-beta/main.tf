@@ -1,7 +1,7 @@
 locals {
   cluster_workload_identity_namespace = var.enable_workload_identity ? ["${var.project}.svc.id.goog"] : []
   metering_bigquery_dataset           = length(var.metering_bigquery_dataset) > 0 ? [var.metering_bigquery_dataset] : []
-  confidential_nodes_enabled          = var.enabled_confidential_nodes ? ["1"] : []
+  confidential_nodes_enabled          = var.enable_confidential_nodes ? ["1"] : []
 }
 
 resource "google_container_cluster" "cluster" {

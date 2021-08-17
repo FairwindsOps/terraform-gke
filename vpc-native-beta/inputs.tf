@@ -109,7 +109,7 @@ variable "enable_network_egress_metering" {
   default     = false
 }
 
-variable "enabled_confidential_nodes" {
+variable "enable_confidential_nodes" {
   type        = bool
   description = "Boolean to turn on confidential nodes for the cluster."
   default     = false
