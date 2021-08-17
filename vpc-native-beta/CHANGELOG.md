@@ -1,3 +1,5 @@
+## vpc-native-beta-v1.4.4
+* Fix typo var name var.enabled_confidential_nodes -> var.enable_confidential_nodes
 ## vpc-native-beta-v1.4.3
 * Added var.enabled_confidential_nodes to allow deploying using confidential nodes
 ## vpc-native-beta-v1.4.2
