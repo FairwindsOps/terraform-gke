@@ -120,9 +120,3 @@ variable "confidential_nodes_initial_machine_type" {
   description = "Initial node_pool that is removed should get an n2d machine type even though it will get removed after creation."
   default     = "n2d-standard-2"
 }
-
-variable "confidential_initial_pool_tags" {
-  type        = list(string)
-  description = "Tags to be added to the initial node pool when using confidential nodes, this is a workaround for clusters that already exist that use confidential nodes with the initial node pool removed"
-  default     = []
-}

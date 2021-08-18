@@ -37,4 +37,3 @@ See the file [example-usage](./example-usage) for an example of how to use this 
 | `enable_network_egress_metering`   | Boolean to turn on Network Egress Metering. Only useful if metering_bigquery_dataset variable is set.           | `false` |
 | `enable_confidential_nodes`       | Boolean to turn on confidential nodes for the cluster.                              | `false` |
 | `confidential_nodes_initial_machine_type` | Initial node_pool that is removed should get an n2d machine type even though it will get removed after creation. | `n2d-standard-2` |
-| `confidential_initial_pool_tags` | Tags to be added to the initial node pool when using confidential nodes, this is a workaround for clusters that already exist that use confidential nodes with the initial node pool removed. | `[]` }

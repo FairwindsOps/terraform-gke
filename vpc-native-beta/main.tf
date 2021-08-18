@@ -81,10 +81,6 @@ resource "google_container_cluster" "cluster" {
     for_each = local.confidential_nodes_enabled
     content {
       machine_type = var.confidential_nodes_initial_machine_type
-      metadata = {
-        disable-legacy-endpoints = true
-      }
-      tags = var.confidential_initial_pool_tags
     }
   }
 
@@ -126,6 +122,7 @@ resource "google_container_cluster" "cluster" {
     #   projects/[name]/regions/us-central1/subnetworks/[name]" => "name"
     ignore_changes = [
       node_pool,
+      node_config,
       network,
       subnetwork,
     ]
