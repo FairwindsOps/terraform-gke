@@ -77,6 +77,13 @@ resource "google_container_cluster" "cluster" {
       enabled = true
     }
   }
+  dynamic "node_config" {
+    for_each = local.confidential_nodes_enabled
+    content {
+      machine_type = var.confidential_nodes_initial_machine_type
+    }
+  }
+
 
   network_policy {
     enabled = true
@@ -115,6 +122,7 @@ resource "google_container_cluster" "cluster" {
     #   projects/[name]/regions/us-central1/subnetworks/[name]" => "name"
     ignore_changes = [
       node_pool,
+      node_config,
       network,
       subnetwork,
     ]

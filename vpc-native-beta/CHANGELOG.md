@@ -1,3 +1,5 @@
+## vpc-native-beta-v1.4.5
+* The initial node_pool needs to have a n2d machine type if confidential nodes are enabled
 ## vpc-native-beta-v1.4.4
 * Fix typo var name var.enabled_confidential_nodes -> var.enable_confidential_nodes
 ## vpc-native-beta-v1.4.3

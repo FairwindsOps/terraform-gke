@@ -114,3 +114,9 @@ variable "enable_confidential_nodes" {
   description = "Boolean to turn on confidential nodes for the cluster."
   default     = false
 }
+
+variable "confidential_nodes_initial_machine_type" {
+  type        = string
+  description = "Initial node_pool that is removed should get an n2d machine type even though it will get removed after creation."
+  default     = "n2d-standard-2"
+}
