@@ -77,6 +77,17 @@ resource "google_container_cluster" "cluster" {
       enabled = true
     }
   }
+  dynamic "node_config" {
+    for_each = local.confidential_nodes_enabled
+    content {
+      machine_type = var.confidential_nodes_initial_machine_type
+      metadata = {
+        disable-legacy-endpoints = true
+      }
+      tags = var.confidential_initial_pool_tags
+    }
+  }
+
 
   network_policy {
     enabled = true
