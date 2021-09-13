@@ -90,4 +90,5 @@ variable "enable_secure_boot" {
 variable "taint" {
   description = "Key value pairs of taints to apply on nodes in the pool"
   type        = map
+  default     = null
 }

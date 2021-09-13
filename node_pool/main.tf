@@ -75,16 +75,16 @@ resource "google_container_node_pool" "node_pool" {
     }
 
     dynamic "taint" {
-      for_each = [var.taint]
+      for_each = toset(var.taint == null ? [] : [var.taint])
       content {
         # TF-UPGRADE-TODO: The automatic upgrade tool can't predict
         # which keys might be set in maps assigned here, so it has
         # produced a comprehensive set here. Consider simplifying
         # this after confirming which keys can be set in practice.
 
-        effect = taint.value.effect
-        key    = taint.value.key
-        value  = taint.value.value
+        effect = var.taint.effect
+        key    = var.taint.key
+        value  = var.taint.value
       }
     }
 
@@ -100,4 +100,3 @@ resource "google_container_node_pool" "node_pool" {
     create_before_destroy = true
   }
 }
-
