@@ -1,5 +1,12 @@
+# node-pool-v3.5.0
+- Fixed taints so that Terraform won't error out if you don't specify them on a node pool
+
+# node-pool-v3.4.0
+- Added taints to node pool module (mandatory, mistakenly)
+
 # node-pool-v3.3.1
 - Added the ability to enable secure boot on nodes when the cluster uses shielded nodes. This can be enabled with the variable `enable_secure_boot`
+
 # node-pool-v3.3.0
 - Added `node_metadata` parameter to control node metadata provided to workload, so that [workload identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) functionality may be used.
 
