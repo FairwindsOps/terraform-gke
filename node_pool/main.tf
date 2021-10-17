@@ -99,4 +99,13 @@ resource "google_container_node_pool" "node_pool" {
   lifecycle {
     create_before_destroy = true
   }
+
+  provisioner "local-exec" {
+    when    = destroy
+    command = <<EOT
+sleep 300
+kubectl get nodes --no-headers | grep -iv ${self.version} | xargs -n 1 kubectl cordon
+kubectl get nodes --no-headers | grep SchedulingDisabled | xargs -n 1 kubectl drain
+EOT
+  }
 }
