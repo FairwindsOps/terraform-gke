@@ -70,6 +70,7 @@ resource "google_container_node_pool" "node_pool" {
     dynamic "workload_metadata_config" {
       for_each = local.cluster_node_metadata_config
       content {
+        mode          = "GKE_METADATA"
         node_metadata = workload_metadata_config.value.node_metadata
       }
     }
