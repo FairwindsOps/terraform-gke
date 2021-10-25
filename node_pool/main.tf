@@ -68,9 +68,9 @@ resource "google_container_node_pool" "node_pool" {
     }
 
     dynamic "workload_metadata_config" {
-      for_each = local.cluster_node_metadata_config
+      for_each = local.cluster_node_workload_config
       content {
-        mode          = workload_metadata_config.value.workload_mode
+        mode = workload_metadata_config.value.workload_mode
       }
     }
 
