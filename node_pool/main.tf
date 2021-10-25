@@ -38,8 +38,8 @@ locals {
     "https://www.googleapis.com/auth/compute",
   ]
 
-  cluster_node_metadata_config = var.node_metadata == "UNSPECIFIED" ? [] : [{
-    node_metadata = var.node_metadata
+  cluster_node_workload_config = var.workload_mode == "UNSPECIFIED" ? [] : [{
+    workload_mode = var.workload_mode
   }]
 }
 
@@ -70,8 +70,7 @@ resource "google_container_node_pool" "node_pool" {
     dynamic "workload_metadata_config" {
       for_each = local.cluster_node_metadata_config
       content {
-        mode          = "GKE_METADATA"
-        node_metadata = workload_metadata_config.value.node_metadata
+        mode          = workload_metadata_config.value.workload_mode
       }
     }
 
