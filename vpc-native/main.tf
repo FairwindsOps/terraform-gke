@@ -29,7 +29,6 @@ resource "google_container_cluster" "cluster" {
 
   # The absence of a user and password here disables basic auth
   master_auth {
-
     client_certificate_config {
       issue_client_certificate = false
     }
