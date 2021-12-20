@@ -56,7 +56,7 @@ resource "google_container_node_pool" "node_pool" {
   }
 
   node_config {
-    image_type   = "COS"
+    image_type   = var.image_type
     disk_size_gb = var.disk_size_in_gb
     machine_type = var.machine_type
     labels       = var.node_labels
