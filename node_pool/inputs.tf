@@ -27,6 +27,11 @@ variable "kubernetes_version" {
   description = "The kubernetes version for the nodes in the pool. This should match the Kubernetes version of the GKE cluster."
 }
 
+variable "image_type" {
+  description = "The OS image to be used for the nodes."
+  default     = "COS"
+}
+
 variable "machine_type" {
   description = "The machine type of nodes in the pool."
   default     = "n1-standard-4"
