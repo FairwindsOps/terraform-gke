@@ -111,7 +111,8 @@ resource "google_container_cluster" "cluster" {
   }
 
   resource_labels = {
-    kubernetescluster = var.name
+    kubernetescluster = var.name,
+    var.resource_labels ? resource_labels : ""
   }
 
   lifecycle {
@@ -128,4 +129,3 @@ resource "google_container_cluster" "cluster" {
     ]
   }
 }
-
