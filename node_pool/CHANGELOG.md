@@ -1,3 +1,6 @@
+# node-pool-v3.6.0
+- Prepares module for compatibility with future 4.x GCP provider
+
 # node-pool-v3.5.0
 - Fixed taints so that Terraform won't error out if you don't specify them on a node pool
 
