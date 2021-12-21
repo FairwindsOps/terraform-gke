@@ -93,8 +93,7 @@ resource "google_container_cluster" "cluster" {
   }
 
   resource_labels = {
-    kubernetescluster = var.name,
-    length(var.resource_labels) > 0 ? var.resource_labels : ""
+    kubernetescluster = var.name
   }
 
   lifecycle {
@@ -107,6 +106,7 @@ resource "google_container_cluster" "cluster" {
       node_pool,
       network,
       subnetwork,
+      resource_labels
     ]
   }
 }
