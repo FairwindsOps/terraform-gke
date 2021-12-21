@@ -94,7 +94,7 @@ resource "google_container_cluster" "cluster" {
 
   resource_labels = {
     kubernetescluster = var.name,
-    var.resource_labels ? var.resource_labels : ""
+    length(var.resource_labels) > 0 ? var.resource_labels : ""
   }
 
   lifecycle {
