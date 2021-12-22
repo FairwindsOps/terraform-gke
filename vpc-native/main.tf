@@ -103,7 +103,7 @@ resource "google_container_cluster" "cluster" {
       node_pool,
       network,
       subnetwork,
-      resource_labels
+      resource_labels,
     ]
   }
 }
