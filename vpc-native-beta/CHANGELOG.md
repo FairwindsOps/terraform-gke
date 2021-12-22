@@ -1,3 +1,5 @@
+## vpc-native-beta-v1.5.0
+* Prepares module for compatibility with future 4.x GCP provider
 ## vpc-native-beta-v1.4.5
 * The initial node_pool needs to have a n2d machine type if confidential nodes are enabled
 ## vpc-native-beta-v1.4.4

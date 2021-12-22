@@ -75,7 +75,7 @@ variable "preemptible_nodes" {
 }
 
 variable "node_metadata" {
-  description = "Specifies how node metadata is exposed to the workload running on the node. Set to `GKE_METADATA_SERVER` to enable workload identity"
+  description = "Specifies how node metadata is exposed to the workload running on the node. Set to `GKE_METADATA` to enable workload identity"
   default     = "UNSPECIFIED"
   type        = string
 }

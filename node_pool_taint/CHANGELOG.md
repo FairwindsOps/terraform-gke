@@ -1,3 +1,7 @@
+# node-pool-taint-v2.3.0
+- Prepares module for compatibility with future 4.x GCP provider
+- Added image_type parameter to control the OS image of the node pool
+
 # node-pool-taint-v2.2.0
 - Added `node_metadata` parameter to control node metadata provided to workload, so that [workload identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) functionality may be used.
 
