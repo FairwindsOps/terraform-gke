@@ -31,9 +31,6 @@ resource "google_container_cluster" "cluster" {
 
   # The absence of a user and password here disables basic auth
   master_auth {
-    username = ""
-    password = ""
-
     client_certificate_config {
       issue_client_certificate = false
     }
@@ -57,7 +54,7 @@ resource "google_container_cluster" "cluster" {
   dynamic "workload_identity_config" {
     for_each = local.cluster_workload_identity_namespace
     content {
-      identity_namespace = local.cluster_workload_identity_namespace[0]
+      workload_pool = local.cluster_workload_identity_namespace[0]
     }
   }
 
