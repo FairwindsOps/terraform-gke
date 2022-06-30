@@ -63,6 +63,7 @@ resource "google_container_node_pool" "node_pool" {
     disk_type    = var.disk_type
     tags         = var.node_tags
     preemptible  = var.preemptible_nodes
+    spot         = var.spot_nodes
     shielded_instance_config {
       enable_secure_boot = var.enable_secure_boot
     }
