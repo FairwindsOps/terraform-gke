@@ -1,3 +1,6 @@
+# node-pool-v3.7.0
+- Added the ability to use spot vms on a node pool. This can be enabled by setting the variable `spot_nodes` to true. This can only be enabled on new node pools and cannot be toggled after creation. Can only be used with GKE 1.22+.
+
 # node-pool-v3.6.0
 - Prepares module for compatibility with future 4.x GCP provider
 - Added image_type parameter to control the OS image of the node pool

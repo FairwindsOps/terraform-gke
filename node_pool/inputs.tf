@@ -80,6 +80,11 @@ variable "preemptible_nodes" {
   default     = false
 }
 
+variable "spot_nodes"{
+  description = "Whether to use spot nodes"
+  default     = false
+}
+
 variable "node_metadata" {
   description = "Specifies how node metadata is exposed to the workload running on the node. Set to `GKE_METADATA` to enable workload identity"
   default     = "UNSPECIFIED"
