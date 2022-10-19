@@ -98,7 +98,7 @@ variable "enable_secure_boot" {
 }
 
 variable "taint" {
-  description = "Key value pairs of taints to apply on nodes in the pool"
+  description = "Dictionary of effect, key and value to apply on nodes in pool"
   type        = map
   default     = null
 }
