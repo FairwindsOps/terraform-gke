@@ -102,7 +102,3 @@ variable "taint" {
   type        = map
   default     = null
 }
-
-variable "ignore_changes" {
-  description = "List of items to add to the ignore_changes lifecycle block on the node pool. Generally for taints."
-}
