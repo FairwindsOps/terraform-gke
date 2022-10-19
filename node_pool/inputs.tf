@@ -98,7 +98,11 @@ variable "enable_secure_boot" {
 }
 
 variable "taint" {
-  description = "Key value pairs of taints to apply on nodes in the pool"
+  description = "Dictionary of effect, key and value to apply on nodes in pool"
   type        = map
   default     = null
+}
+
+variable "ignore_changes" {
+  description = "List of items to add to the ignore_changes lifecycle block on the node pool. Generally for taints."
 }

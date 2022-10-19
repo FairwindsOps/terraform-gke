@@ -99,5 +99,11 @@ resource "google_container_node_pool" "node_pool" {
 
   lifecycle {
     create_before_destroy = true
+    dynamic "ignore_changes" {
+      for_each = toset(var.ignore_changes == null ? [] : [var.ignore_changes])
+      content {
+        var.ignore_changes
+      }
+    }
   }
 }
