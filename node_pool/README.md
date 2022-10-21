@@ -152,10 +152,38 @@ Type: `bool`
 
 Default: `false`
 
-## Future To-do Items
+#### image_type
 
-* Perform additional testing  of conditions that will cause Terraform to recreate the node pool, based on the `keeper`s defined in the `random_id` resource.
-* Determine whether, depending on results from the above testing, the node pool should have a `create_before_destroy` lifecycle.
+Description: The OS image to be used for the nodes.
+
+Type: `string`
+
+Default: none
+
+#### spot_nodes
+
+Description: Whether to use spot nodes in this pool.
+
+Type: `bool`
+
+Default: `false`
+
+#### enable_secure_boot
+
+Description: If shielded nodes is enabled at the cluster level, you can optionally set this to enable secure boot on shielded nodes.
+
+Type: `bool`
+
+Default: `false`
+
+#### taint
+
+Description: Dictionary of effect, key and value to apply on nodes in pool. Only one is allowed.
+
+Type: `map`
+
+Default: `null`
+
+## Future To-do Items
 * Do we want to be able to enable auto-upgrade on node pools?
-* Do we want to be able to set taints on node pools?
 * Do we want to enable auto-repair always on node pools?

@@ -1,40 +1,25 @@
-variable "name" {
-  description = "The name of the node pool. A random string will be appended to this name, to allow replacement node pools to be created before destroying the current pool."
-}
-
 variable "gke_cluster_name" {
   description = "The name of the GKE cluster to bind this node pool."
-}
-
-variable "region" {
-  description = "The region for the node pool."
-}
-
-variable "initial_node_count" {
-  description = "The initial node count for the pool, per availability zone. Changing this will force recreation of the resource."
-  default     = "1"
-}
-
-variable "min_node_count" {
-  description = "Minimum number of nodes for autoscaling, per availability zone."
-}
-
-variable "max_node_count" {
-  description = "Maximum number of nodes for autoscaling, per availability zone."
 }
 
 variable "kubernetes_version" {
   description = "The kubernetes version for the nodes in the pool. This should match the Kubernetes version of the GKE cluster."
 }
 
-variable "image_type" {
-  description = "The OS image to be used for the nodes."
-  default     = "COS"
+variable "max_node_count" {
+  description = "Maximum number of nodes for autoscaling, per availability zone."
 }
 
-variable "machine_type" {
-  description = "The machine type of nodes in the pool."
-  default     = "n1-standard-4"
+variable "min_node_count" {
+  description = "Minimum number of nodes for autoscaling, per availability zone."
+}
+
+variable "name" {
+  description = "The name of the node pool. A random string will be appended to this name, to allow replacement node pools to be created before destroying the current pool."
+}
+
+variable "region" {
+  description = "The region for the node pool."
 }
 
 variable "disk_size_in_gb" {
@@ -42,10 +27,19 @@ variable "disk_size_in_gb" {
   default     = "100"
 }
 
-variable "node_tags" {
-  type        = list
-  description = "List of strings for tags on node pool VMs. These are generally used for firewall rules."
-  default     = []
+variable "disk_type" {
+  description = "Type of the disk attached to each node"
+  default     = "pd-standard"
+}
+
+variable "initial_node_count" {
+  description = "The initial node count for the pool, per availability zone. This has been ignored on the node pool module resource. Remove it from ignore_changes if you want to set it yourself, but 1 is usually sufficient."
+  default     = "1"
+}
+
+variable "machine_type" {
+  description = "The machine type of nodes in the pool."
+  default     = "n1-standard-4"
 }
 
 variable "node_labels" {
@@ -54,9 +48,16 @@ variable "node_labels" {
   default     = {}
 }
 
-variable "disk_type" {
-  description = "Type of the disk attached to each node"
-  default     = "pd-standard"
+variable "node_metadata" {
+  description = "Specifies how node metadata is exposed to the workload running on the node. Set to `GKE_METADATA` to enable workload identity"
+  default     = "UNSPECIFIED"
+  type        = string
+}
+
+variable "node_tags" {
+  type        = list
+  description = "List of strings for tags on node pool VMs. These are generally used for firewall rules."
+  default     = []
 }
 
 variable "additional_oauth_scopes" {
@@ -80,15 +81,15 @@ variable "preemptible_nodes" {
   default     = false
 }
 
-variable "spot_nodes"{
-  description = "Whether to use spot nodes"
-  default     = false
+variable "image_type" {
+  description = "The OS image to be used for the nodes."
+  default     = "COS"
 }
 
-variable "node_metadata" {
-  description = "Specifies how node metadata is exposed to the workload running on the node. Set to `GKE_METADATA` to enable workload identity"
-  default     = "UNSPECIFIED"
-  type        = string
+variable "spot_nodes"{
+  type        = bool
+  description = "Whether to use spot nodes"
+  default     = false
 }
 
 variable "enable_secure_boot" {
@@ -98,7 +99,7 @@ variable "enable_secure_boot" {
 }
 
 variable "taint" {
-  description = "Key value pairs of taints to apply on nodes in the pool"
+  description = "Dictionary of effect, key and value to apply on nodes in pool"
   type        = map
   default     = null
 }

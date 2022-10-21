@@ -1,3 +1,6 @@
+# node-pool-v3.8.0
+- Added the following values to ignore_changes on the node pool, since they aren't commonly configured but instead set by GKE: `initial_node_count`, `node_config.0.metadata` and `node_config.0.min_cpu_platform`
+
 # node-pool-v3.7.0
 - Added the ability to use spot vms on a node pool. This can be enabled by setting the variable `spot_nodes` to true. This can only be enabled on new node pools and cannot be toggled after creation. Can only be used with GKE 1.22+.
 
