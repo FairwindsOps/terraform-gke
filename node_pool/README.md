@@ -98,7 +98,7 @@ Default:
 
 #### node\_metadata
 
-Description: Defines how to expose the node metadata to the workload running on the node. Acceptable options are `UNSPECIFIED`, `SECURE`, `EXPOSE`, and `GKE_METADATA_SERVER`. `GKE_METADATA_SERVER` will enable [workload identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) for the node pool. See the provider [docs here](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/container_cluster#workload_metadata_config) for more details.
+Description: Defines how to expose the node metadata to the workload running on the node. Acceptable options are `UNSPECIFIED`, `SECURE`, `EXPOSE`, `GKE_METADATA` and `GKE_METADATA_SERVER`. `GKE_METADATA` will enable [workload identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) for the node pool. See the provider [docs here](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/container_cluster#workload_metadata_config) for more details.
 
 Type: `string`
 
