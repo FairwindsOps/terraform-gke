@@ -33,7 +33,7 @@ variable "disk_type" {
 }
 
 variable "initial_node_count" {
-  description = "The initial node count for the pool, per availability zone. Changing this will force recreation of the resource."
+  description = "The initial node count for the pool, per availability zone. This has been ignored on the node pool module resource. Remove it from ignore_changes if you want to set it yourself, but 1 is usually sufficient."
   default     = "1"
 }
 
