@@ -44,6 +44,10 @@ variable "master_authorized_network_cidrs" {
   ]
 }
 
+variable "cluster_autoscaling_enabled" {
+  description = "Whether or not to enable the cluster autoscaler"
+  default = true
+}
 variable "cluster_autoscaling_profile" {
   description = "The autoscaling profile for the cluster"
   default = "BALANCED"
