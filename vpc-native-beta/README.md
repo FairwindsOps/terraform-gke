@@ -2,7 +2,7 @@
 
 Requirements:
 `terraform` >= `0.12.x`
-terraform provider `google` >= `2.5.0`
+terraform provider `google-beta` >= `4.27.0`
 
 This module manages a Google Kubernetes Engine (GKE) VPC Native cluster. The subnet CIDRs used for cluster nodes, pods, and services, are specified in the form of existing Google Compute secondary IP ranges. Use a separate Terraform module, such as [this `terraform-gcp-vpc-native/default` one](https://github.com/FairwindsOps/terraform-gcp-vpc-native/tree/master/default), to create these network resources in advance.
 

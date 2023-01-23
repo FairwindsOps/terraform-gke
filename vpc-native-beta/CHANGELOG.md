@@ -1,3 +1,5 @@
+## vpc-native-beta-v1.5.1
+* Added paramter that allows changing of the cluster autoscaling profile.
 ## vpc-native-beta-v1.5.0
 * Prepares module for compatibility with future 4.x GCP provider
 ## vpc-native-beta-v1.4.5

@@ -14,7 +14,10 @@ resource "google_container_cluster" "cluster" {
   monitoring_service    = var.monitoring_service
   logging_service       = var.logging_service
   enable_shielded_nodes = var.enable_shielded_nodes
-
+    
+  cluster_autoscaling {
+    autoscaling_profile = var.cluster_autoscaling_profile
+  }
 
   vertical_pod_autoscaling {
     enabled = var.vpa_enabled

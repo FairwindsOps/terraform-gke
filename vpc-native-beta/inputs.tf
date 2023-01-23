@@ -44,6 +44,11 @@ variable "master_authorized_network_cidrs" {
   ]
 }
 
+variable "cluster_autoscaling_profile" {
+  description = "The autoscaling profile for the cluster"
+  default = "BALANCED"
+}
+
 variable "maintenance_policy_start_time" {
   description = "The time (in GMT) when the cluster maintenance window will start."
   default     = "06:00"
