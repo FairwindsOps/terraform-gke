@@ -16,7 +16,7 @@ resource "google_container_cluster" "cluster" {
   enable_shielded_nodes = var.enable_shielded_nodes
     
   cluster_autoscaling {
-    enabled = var.cluster_autoscaling_enabled
+    enabled = false
     autoscaling_profile = var.cluster_autoscaling_profile
   }
 
