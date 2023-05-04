@@ -22,6 +22,12 @@ variable "region" {
   description = "The region for the node pool."
 }
 
+variable "node_locations" {
+  type        = list
+  description = "The list of zones in which the node pool's nodes should be located. Nodes must be in the region of their regional cluster or in the same region as their cluster's zone for zonal clusters. If unspecified, the cluster-level node_locations will be used."
+  default     = null
+}
+
 variable "disk_size_in_gb" {
   description = "Disk size, in GB, for the nodes in the pool."
   default     = "100"
