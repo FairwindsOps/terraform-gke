@@ -1,3 +1,6 @@
+# node-pool-v3.8.1
+- Added `node_locations` parameter to limit a node pool to specific zones. Zones selected must be in the parent clusters region. If left empty nodes will default to their parent clusters zones.
+
 # node-pool-v3.8.0
 - Added the following values to ignore_changes on the node pool, since they aren't commonly configured but instead set by GKE: `initial_node_count`, `node_config.0.metadata` and `node_config.0.min_cpu_platform`
 

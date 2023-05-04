@@ -47,6 +47,7 @@ resource "google_container_node_pool" "node_pool" {
   name               = "${var.name}-${random_id.entropy.hex}"
   cluster            = var.gke_cluster_name
   location           = var.region
+  node_locations     = var.node_locations
   version            = var.kubernetes_version
   initial_node_count = var.initial_node_count
 
