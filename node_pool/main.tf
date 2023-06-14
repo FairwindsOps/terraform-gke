@@ -108,7 +108,8 @@ resource "google_container_node_pool" "node_pool" {
   }
 
   timeouts {
-    create = "10s"
-    update = "1m"
+    create = "1m"
+    update = var.timeout_update
+    delete = var.timeout_delete
   }
 }

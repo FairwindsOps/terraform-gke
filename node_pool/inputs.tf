@@ -109,3 +109,21 @@ variable "taint" {
   type        = map
   default     = null
 }
+
+variable "timeout_create"{
+  type        = string
+  description = "Override default timeout for CRUD function"
+  default     = "30m"
+}
+
+variable "timeout_delete"{
+  type        = string
+  description = "Override default timeout for CRUD function"
+  default     = "30m"
+}
+
+variable "timeout_update"{
+  type        = string
+  description = "Override default timeout for CRUD function"
+  default     = "30m"
+}
