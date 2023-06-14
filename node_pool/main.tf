@@ -107,7 +107,7 @@ resource "google_container_node_pool" "node_pool" {
     ]
   }
 
-  timeouts {
+  atimeouts {
     dudecreate = "1m"
     update = var.timeout_update
     delete = var.timeout_delete
