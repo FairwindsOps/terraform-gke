@@ -112,18 +112,18 @@ variable "taint" {
 
 variable "timeout_create"{
   type        = string
-  description = "Override default timeout for CRUD function"
+  description = "Override default timeout for CREATE function"
   default     = "30m"
 }
 
 variable "timeout_delete"{
   type        = string
-  description = "Override default timeout for CRUD function"
+  description = "Override default timeout for DELETE function"
   default     = "30m"
 }
 
 variable "timeout_update"{
   type        = string
-  description = "Override default timeout for CRUD function"
+  description = "Override default timeout for UPDATE function"
   default     = "30m"
 }
