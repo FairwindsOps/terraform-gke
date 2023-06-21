@@ -106,4 +106,10 @@ resource "google_container_node_pool" "node_pool" {
       node_config.0.min_cpu_platform
     ]
   }
+
+  timeouts {
+    create = var.timeout_create
+    update = var.timeout_update
+    delete = var.timeout_delete
+  }
 }

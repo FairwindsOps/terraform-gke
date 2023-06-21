@@ -1,3 +1,6 @@
+# node-pool-v3.8.2
+- Added `timeout_create`, `timeout_delete`, and `timeout_update` parameters to provide a way to override the Terraform default timeouts for these actions on `google_container_node_pool` node pool resource.
+
 # node-pool-v3.8.1
 - Added `node_locations` parameter to limit a node pool to specific zones. Zones selected must be in the parent clusters region. If left empty nodes will default to their parent clusters zones. **Note: node_locations will not revert to the cluster's default set of zones upon being unset. You must manually reconcile the list of zones with your cluster.
 
