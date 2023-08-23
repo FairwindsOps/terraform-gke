@@ -1,3 +1,5 @@
+## vpc-native-beta-v1.5.1
+* Enables utilizing GCP managed prometheus
 ## vpc-native-beta-v1.5.0
 * Prepares module for compatibility with future 4.x GCP provider
 ## vpc-native-beta-v1.4.5
