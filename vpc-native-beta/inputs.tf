@@ -120,3 +120,8 @@ variable "confidential_nodes_initial_machine_type" {
   description = "Initial node_pool that is removed should get an n2d machine type even though it will get removed after creation."
   default     = "n2d-standard-2"
 }
+variable "enable_managed_prometheus" {
+  type        = bool
+  description = "Boolean to enable Google Managed Prometheus on clusters"
+  default     = false
+}

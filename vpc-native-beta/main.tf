@@ -35,7 +35,11 @@ resource "google_container_cluster" "cluster" {
       issue_client_certificate = false
     }
   }
-
+  monitoring_config {
+    managed_prometheus {
+      enabled = var.enable_managed_prometheus
+    }
+  }
   private_cluster_config {
     enable_private_endpoint = var.enable_private_endpoint
     enable_private_nodes    = var.enable_private_nodes
