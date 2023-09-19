@@ -1,3 +1,7 @@
+## vpc-native-beta-v1.5.2
+
+- Enables GCP cost allocation for clusters
+
 ## vpc-native-beta-v1.5.1
 
 - Enables utilizing GCP managed prometheus

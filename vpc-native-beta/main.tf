@@ -45,7 +45,9 @@ resource "google_container_cluster" "cluster" {
     enable_private_nodes    = var.enable_private_nodes
     master_ipv4_cidr_block  = var.master_ipv4_cidr_block
   }
-
+  cost_management_config {
+    enabled = var.enable_cost_allocation
+  }
   addons_config {
     network_policy_config {
       disabled = false
