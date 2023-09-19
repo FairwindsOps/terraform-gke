@@ -127,6 +127,6 @@ variable "enable_managed_prometheus" {
 }
 variable "enable_cost_allocation" {
   type        = bool
-  description = "Boolean to enable Google Managed Prometheus on clusters"
+  description = "Boolean to enable GKE Cost Allocation"
   default     = false
 }
