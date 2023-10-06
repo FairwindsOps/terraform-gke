@@ -27,6 +27,11 @@ variable "pods_secondary_ip_range_name" {
   description = "The name of an existing network secondary IP range to be used for pods."
 }
 
+variable "release_channel" {
+  description = "The release channel for the Kubernetes version."
+  default = "UNSPECIFIED"
+}
+
 variable "services_secondary_ip_range_name" {
   description = "The name of an existing network secondary IP range to be used for services."
 }
@@ -64,14 +69,14 @@ variable "master_ipv4_cidr_block" {
   default     = null
 }
 
-variable "monitoring_service" {
-  description = "The monitoring service to write metrics to"
-  default     = "monitoring.googleapis.com/kubernetes"
+variable "monitoring_config" {
+  description = "Exposes metrics cluster components."
+  default     = [ "SYSTEM_COMPONENTS" ]
 }
 
-variable "logging_service" {
-  description = "The logging service to write logs to"
-  default     = "logging.googleapis.com/kubernetes"
+variable "logging_config" {
+  description = "Exposes logs for cluster components."
+  default     = [ "SYSTEM_COMPONENTS" ]
 }
 
 variable "vpa_enabled" {

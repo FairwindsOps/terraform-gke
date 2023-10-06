@@ -11,8 +11,6 @@ resource "google_container_cluster" "cluster" {
   min_master_version    = var.kubernetes_version
   network               = var.network_name
   subnetwork            = var.nodes_subnetwork_name
-  monitoring_service    = var.monitoring_service
-  logging_service       = var.logging_service
   enable_shielded_nodes = var.enable_shielded_nodes
 
 
@@ -35,7 +33,16 @@ resource "google_container_cluster" "cluster" {
       issue_client_certificate = false
     }
   }
+
+  release_channel {
+    channel = var.release_channel
+  }
+
+  logging_config {
+    enable_components = var.logging_config
+  }
   monitoring_config {
+    enable_components = var.monitoring_config
     managed_prometheus {
       enabled = var.enable_managed_prometheus
     }
