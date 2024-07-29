@@ -8,10 +8,12 @@ variable "kubernetes_version" {
 
 variable "max_node_count" {
   description = "Maximum number of nodes for autoscaling, per availability zone."
+  default     = null
 }
 
 variable "min_node_count" {
   description = "Minimum number of nodes for autoscaling, per availability zone."
+  default     = null
 }
 
 variable "name" {
@@ -23,7 +25,7 @@ variable "region" {
 }
 
 variable "node_locations" {
-  type        = list
+  type        = list(any)
   description = "The list of zones in which the node pool's nodes should be located. Nodes must be in the region of their regional cluster or in the same region as their cluster's zone for zonal clusters. If unspecified, the cluster-level node_locations will be used."
   default     = null
 }
@@ -50,7 +52,7 @@ variable "machine_type" {
 
 variable "node_labels" {
   description = "Key Value Pairs of Labels to add to the nodes in the pool"
-  type        = map
+  type        = map(any)
   default     = {}
 }
 
@@ -61,13 +63,13 @@ variable "node_metadata" {
 }
 
 variable "node_tags" {
-  type        = list
+  type        = list(any)
   description = "List of strings for tags on node pool VMs. These are generally used for firewall rules."
   default     = []
 }
 
 variable "additional_oauth_scopes" {
-  type        = list
+  type        = list(any)
   description = "List of strings for additional oauth scope in a node config"
   default     = []
 }
@@ -92,7 +94,7 @@ variable "image_type" {
   default     = "COS"
 }
 
-variable "spot_nodes"{
+variable "spot_nodes" {
   type        = bool
   description = "Whether to use spot nodes"
   default     = false
@@ -106,23 +108,23 @@ variable "enable_secure_boot" {
 
 variable "taint" {
   description = "Dictionary of effect, key and value to apply on nodes in pool"
-  type        = map
+  type        = map(any)
   default     = null
 }
 
-variable "timeout_create"{
+variable "timeout_create" {
   type        = string
   description = "Override default timeout for CREATE function"
   default     = "30m"
 }
 
-variable "timeout_delete"{
+variable "timeout_delete" {
   type        = string
   description = "Override default timeout for DELETE function"
   default     = "30m"
 }
 
-variable "timeout_update"{
+variable "timeout_update" {
   type        = string
   description = "Override default timeout for UPDATE function"
   default     = "30m"

@@ -51,9 +51,12 @@ resource "google_container_node_pool" "node_pool" {
   version            = var.kubernetes_version
   initial_node_count = var.initial_node_count
 
-  autoscaling {
-    min_node_count = var.min_node_count
-    max_node_count = var.max_node_count
+  dynamic "autoscaling" {
+    for_each = (var.min_node_count != null && var.max_node_count != null) ? [1] : []
+    content {
+      min_node_count = var.min_node_count
+      max_node_count = var.max_node_count
+    }
   }
 
   node_config {
