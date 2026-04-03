@@ -49,9 +49,21 @@ variable "master_authorized_network_cidrs" {
   ]
 }
 
-variable "maintenance_policy_start_time" {
+
+variable "maintenance_policy_window_start_time" {
   description = "The time (in GMT) when the cluster maintenance window will start."
-  default     = "06:00"
+  default = "1970-01-01T13:00:00Z"
+  type = string
+}
+variable "maintenance_policy_window_end_time" {
+  description = "The time (in GMT) when the cluster maintenance window will start."
+  default = "1970-01-01T21:00:00Z"
+  type = string
+}
+variable "maintenance_policy_window_recurrence" {
+  description = "The time (in GMT) when the cluster maintenance window will start."
+  default = "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
+  type = string
 }
 
 variable "enable_private_endpoint" {
@@ -71,12 +83,22 @@ variable "master_ipv4_cidr_block" {
 
 variable "monitoring_config" {
   description = "Exposes metrics cluster components."
-  default     = [ "SYSTEM_COMPONENTS" ]
+  default     = null
 }
 
 variable "logging_config" {
   description = "Exposes logs for cluster components."
-  default     = [ "SYSTEM_COMPONENTS" ]
+  default     = null
+}
+
+variable "monitoring_service" {
+  description = "Exposes metrics cluster components."
+  default     = "monitoring.googleapis.com/kubernetes"
+}
+
+variable "logging_service" {
+  description = "Exposes logs for cluster components."
+  default     = "logging.googleapis.com/kubernetes"
 }
 
 variable "vpa_enabled" {
@@ -93,6 +115,12 @@ variable "enable_workload_identity" {
 variable "enable_shielded_nodes" {
   type        = bool
   description = "A boolean to enable cluster-wide shielded nodes"
+  default     = false
+}
+
+variable "enable_intranode_visibility" {
+  type        = bool
+  description = "A boolean to enable intranode-visbility in the cluster"
   default     = false
 }
 

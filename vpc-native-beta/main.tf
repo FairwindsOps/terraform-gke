@@ -5,15 +5,16 @@ locals {
 }
 
 resource "google_container_cluster" "cluster" {
-  provider              = google-beta
-  name                  = var.name
-  location              = var.region
-  min_master_version    = var.kubernetes_version
-  network               = var.network_name
-  subnetwork            = var.nodes_subnetwork_name
-  enable_shielded_nodes = var.enable_shielded_nodes
-
-
+  provider                    = google-beta
+  name                        = var.name
+  location                    = var.region
+  min_master_version          = var.kubernetes_version
+  network                     = var.network_name
+  subnetwork                  = var.nodes_subnetwork_name
+  enable_shielded_nodes       = var.enable_shielded_nodes
+  enable_intranode_visibility = var.enable_intranode_visibility 
+  monitoring_service          = var.monitoring_service
+  logging_service             = var.logging_service
   vertical_pod_autoscaling {
     enabled = var.vpa_enabled
   }
@@ -38,13 +39,20 @@ resource "google_container_cluster" "cluster" {
     channel = var.release_channel
   }
 
-  logging_config {
-    enable_components = var.logging_config
+  dynamic "logging_config" {
+    for_each = var.logging_config != null ? [1] : []
+    content {
+      enable_components = var.logging_config
+    }
   }
-  monitoring_config {
-    enable_components = var.monitoring_config
-    managed_prometheus {
-      enabled = var.enable_managed_prometheus
+
+  dynamic "monitoring_config" {
+    for_each = var.monitoring_config != null ? [1] : []
+    content {
+      enable_components = var.monitoring_config
+      managed_prometheus {
+        enabled = var.enable_managed_prometheus
+      }
     }
   }
   private_cluster_config {
@@ -115,8 +123,10 @@ resource "google_container_cluster" "cluster" {
   }
 
   maintenance_policy {
-    daily_maintenance_window {
-      start_time = var.maintenance_policy_start_time
+    recurring_window {
+      start_time = var.maintenance_policy_window_start_time
+      end_time = var.maintenance_policy_window_end_time
+      recurrence = var.maintenance_policy_window_recurrence
     }
   }
 
