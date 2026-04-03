@@ -49,22 +49,18 @@ variable "master_authorized_network_cidrs" {
   ]
 }
 
-variable "maintenance_policy_start_time" {
+
+variable "maintenance_policy_window_start_time" {
   description = "The time (in GMT) when the cluster maintenance window will start."
-  type = string
-  default = ""
-}
-variable "maintenance_policy_recurring_window_end_time" {
-  description = "The time (in GMT) when the cluster maintenance window will start."
-  default = "1970-01-01T19:00:00Z"
+  default = "1970-01-01T13:00:00Z"
   type = string
 }
-variable "maintenance_policy_recurring_window_start_time" {
+variable "maintenance_policy_window_end_time" {
   description = "The time (in GMT) when the cluster maintenance window will start."
-  default = "1970-01-01T15:00:00Z"
+  default = "1970-01-01T21:00:00Z"
   type = string
 }
-variable "maintenance_policy_recurring_window_recurrence" {
+variable "maintenance_policy_window_recurrence" {
   description = "The time (in GMT) when the cluster maintenance window will start."
   default = "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
   type = string

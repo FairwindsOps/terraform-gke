@@ -124,9 +124,9 @@ resource "google_container_cluster" "cluster" {
 
   maintenance_policy {
     recurring_window {
-      start_time = "1970-01-01T13:00:00Z"
-      end_time = "1970-01-01T21:00:00Z"
-      recurrence = "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
+      start_time = var.maintenance_policy_window_start_time
+      end_time = var.maintenance_policy_window_end_time
+      recurrence = var.maintenance_policy_window_recurrence
     }
   }
 
