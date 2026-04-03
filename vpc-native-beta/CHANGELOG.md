@@ -1,3 +1,13 @@
+## vpc-native-beta-v1.7.0
+
+- Enables Intranode Visibility Customization
+- Adds 9am-5pm Monday-Friday maintenance window
+- Allows using legacy logging and monitoring service variables
+
+## vpc-native-beta-v1.6.0
+
+- Enables logging and monitoring config values in module
+
 ## vpc-native-beta-v1.5.2
 
 - Enables GCP cost allocation for clusters
